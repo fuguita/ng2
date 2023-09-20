@@ -1,4 +1,5 @@
 class Admin::GenresController < ApplicationController
+  before_action :authenticate_admin!
   
   def create
     @genre = Genre.new(genre_params)
@@ -20,8 +21,15 @@ class Admin::GenresController < ApplicationController
   
   def update
     @genre = Genre.find(params[:id])
-    @genre.update
+    @genre.update(genre_params)
     redirect_to 
+  end
+  
+  def destroy
+    @genre = Genre.find(params[:id])
+    @genre.destroy
+    redirect_to 
+    
   end
   
   
