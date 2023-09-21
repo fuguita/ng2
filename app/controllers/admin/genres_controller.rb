@@ -32,5 +32,11 @@ class Admin::GenresController < ApplicationController
     
   end
   
+  peivate
+  
+  def genre_params
+    params.requier(:genre).permit(:name)
+  end  
+  
   
 end
