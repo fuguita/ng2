@@ -16,8 +16,8 @@ Rails.application.routes.draw do
     patch 'customers/information' => "customers#update", as: 'information_customers'
     patch 'customers/withdraw' => "customers#withdraw", as: 'withdraw_customers'
   end
-  
-  namespeace admin do
+
+  namespace :admin do
   resources :genres, only: [:index, :create, :update, :destroy]
   resources :customers, only: [:index, :show, :edit, :update]
   end
