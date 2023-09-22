@@ -10,8 +10,17 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root to: "homes#top"
+    resource :customers, only: [:show]
+    get 'customers/information/edit' => "customers#edit", as: 'information_edit_customers'
+    get 'customers/check' => "customers/check", as: 'check'
+    patch 'customers/information' => "customers#update", as: 'information_customers'
+    patch 'customers/withdraw' => "customers#withdraw", as: 'withdraw_customers'
   end
   
+  namespeace admin do
+  resources :genres, only: [:index, :create, :update, :destroy]
+  resources :customers, only: [:index, :show, :edit, :update]
+  end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
