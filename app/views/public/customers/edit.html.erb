@@ -1,0 +1,59 @@
+<h2>会員情報編集</h2>
+  <%= form_with model: current_customer, url: information_customers_path, method: :patch do |f| %>
+    <table class="table table-borderless">
+      <tbody>
+        <!--<%#= render "public/shared/error_messages", resource: resource %>-->
+          <tr>
+            <div class="field">
+              <td><%= f.label :last_name, "(姓)" %></td>
+              <td><%= f.text_field :last_name, autofocus: true, placeholder: "令和", class: "form-control" %></td>
+              <td><%= f.label :first_name, "(名)" %></td>
+              <td><%= f.text_field :first_name, placeholder: "太郎", class: "form-control" %></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="field">
+              <td><%= f.label :last_name_kana, "セイ" %></td>
+              <td><%= f.text_field :last_name_kana, placeholder: "レイワ", class: "form-control" %></td>
+              <td><%= f.label :first_name_kana, "メイ" %></td>
+              <td><%= f.text_field :first_name_kana, placeholder: "タロウ", class: "form-control" %></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="field">
+              <td><%= f.label :email, "メールアドレス" %></td>
+              <td></td>
+              <td><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="field">
+              <td><%= f.label :postal_code, "郵便番号(ハイフンなし)" %></td>
+              <td></td>
+              <td><%= f.text_field :postal_code, placeholder: "aaa", class: "form-control"  %></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="field">
+              <td><%= f.label :address, "住所" %></td>
+              <td></td>
+              <td><%= f.text_field :address, placeholder: "東京都渋谷区代々木神園町0-0", class: "form-control" %></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="field">
+              <td><%= f.label :telephone_number, "電話番号(ハイフンなし)" %></td>
+              <td></td>
+              <td><%= f.text_field :telephone_number, placeholder: "00000", class: "form-control" %></td>
+            </div>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <div class="actions">
+              <td><%= f.submit "変更", class: "px-5 btn btn-success" %></td>
+            </div>
+          </tr>
+      </tbody>
+    </table>
+  <% end %>
