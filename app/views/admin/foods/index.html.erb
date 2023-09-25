@@ -1,0 +1,32 @@
+<h2>商品一覧</h2>
+<%= link_to "商品新規登録", new_admin_food_path, class: "btn btn-info" %>
+
+<table class="table">
+        <thead class="bg-light">
+          <tr>
+            <th>商品ID</th>
+            <th>商品名</th>
+            <th>税抜価格</th>
+            <th>ジャンル</th>
+            <th>ステータス</th>
+          </tr>
+        </thead>
+        <tbody>
+      <% @foods.each do |food| %>
+      <tr>
+      <td><%= food.id %></td>
+      <td><%= link_to admin_food_path(food.id), class: "border-bottom text-dark" do %>
+          <%= food.name %>
+          <% end %></td>
+      <td><%= food.price.to_s(:delimited) %></td>
+      <td><%= food.genre.name %></td>
+      <!--<td><%#= item.active_judge %></td>-->
+        <% if food.is_active == true %>
+          <td class="text-success font-weight-bold">販売中</td>
+        <% else %>
+          <td class="text-muted font-weight-bold">販売停止中</td>
+        <% end %>
+      <% end %>
+      </tr>
+        </tbody>
+      </table>

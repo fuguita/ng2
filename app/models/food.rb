@@ -1,10 +1,10 @@
-class Item < ApplicationRecord
+class Food < ApplicationRecord
 
   belongs_to :genres
 
-  has_one_attached :item_image
+  has_one_attached :food_image
 
-  def get_item_image
+  def get_food_image
     (profile_image.attached?) ? profile_image : 'no_image.jpg'
   end
 
