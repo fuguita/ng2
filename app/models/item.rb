@@ -1,11 +1,11 @@
 class Item < ApplicationRecord
 
-  belongs_to :genres
+  belongs_to :genre
 
   has_one_attached :item_image
 
   def get_item_image
-    (profile_image.attached?) ? profile_image : 'no_image.jpg'
+    (item_image.attached?) ? item_image : 'no_image.jpg'
   end
 
   def tax_in_price
