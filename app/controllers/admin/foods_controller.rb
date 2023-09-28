@@ -1,5 +1,5 @@
 class Admin::FoodsController < ApplicationController
- 
+
   def new
     @food = Food.new
   end
