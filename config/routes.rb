@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     get 'customers/check' => "customers/check", as: 'check'
     patch 'customers/information' => "customers#update", as: 'information_customers'
     patch 'customers/withdraw' => "customers#withdraw", as: 'withdraw_customers'
+    resources :foods, only: [:show, :index]
   end
 
   namespace :admin do

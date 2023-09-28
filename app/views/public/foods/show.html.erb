@@ -1,0 +1,41 @@
+<div class="container">
+   <div class="row">
+     <h4 class="mt-4 bg-light">商品詳細</h4>
+   </div>
+
+   <div class="row mt-5">
+      <div class="col-4">
+        <%= image_tag @food.get_food_image, size: "200x200" %>
+      </div>
+      <div class="col-6 offset-1">
+        <table class="table table-borderless">
+          <tbody>
+             <tr>
+                <td class="col-4">商品名</td><td><%= @food.name %></td>
+             </tr>
+             <tr>
+                <td>商品説明</td><td><%= @food.introduction %></td>
+             </tr>
+             <tr>
+                <td>ジャンル　<td><%= @food.genre.name %></td>
+             </tr>
+             <tr>
+                <td>税込価格<br>(税抜価格)</td><td><%= @food.tax_in_price %> (<%= @food.price.to_s(:delimited) %>)円</td>
+             </tr>
+             <tr>
+                <td>販売ステータス</td>
+              <% if @food.is_active == true %>
+                <td class="text-success font-weight-bold">販売中</td>
+              <% else %>
+                <td class="text-muted font-weight-bold">販売停止中</td>
+              <% end %>
+             </tr>
+            </tbody>
+          </table>
+          <div class="text-center col-7">
+         
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

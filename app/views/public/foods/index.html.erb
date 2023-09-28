@@ -1,0 +1,7 @@
+<h3>商品一覧(全<%= @foods_all.count %>件)</h3>
+
+<% @foods.each do |food| %>
+  <%= image_tag food.get_food_image, size: "50x50" %><br>
+  <%= link_to "#{food.name}", food_path(food) %><br>
+  <%= food.price %><br>
+<% end %>
