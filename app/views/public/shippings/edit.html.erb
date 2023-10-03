@@ -1,2 +1,28 @@
-<h1>Public::Shippings#edit</h1>
-<p>Find me in app/views/public/shippings/edit.html.erb</p>
+<h2>配送先編集</h2>
+<%= form_with model: @shipping do |f| %>
+  <table>
+    <tbody>
+    <tr>
+      <td>郵便番号（ハイフンなし）</td>
+      <td>
+        <%= f.text_field :postal_code, placeholder: "2110001" %>
+      </td>
+    </tr>
+    <tr>
+      <td>住所</td>
+      <td>
+        <%= f.text_field :address, placeholder: "東京都渋谷区代々木神園町0-0" %>
+      </td>
+    </tr>
+    <tr>
+      <td>宛名</td>
+      <td>
+        <%= f.text_field :name, placeholder: "平成太郎" %>
+      </td>
+      <tr>
+        <td><%= f.submit "変更する", class: "btn btn-success" %></td>
+      </tr>
+    </tr>
+    </tbody>
+  </table>
+<% end %>
