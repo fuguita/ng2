@@ -2,7 +2,6 @@ class Public::OrdersController < ApplicationController
   
   def create
     
-    
   end
   
   def new
@@ -18,4 +17,9 @@ class Public::OrdersController < ApplicationController
 
   def complete
   end
+  
+  private
+  
+  def order_params
+  end  
 end
