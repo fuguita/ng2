@@ -6,6 +6,4 @@ class CartItem < ApplicationRecord
     food.tax_in_price * amount
   end
 
-
-
 end
