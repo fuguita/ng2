@@ -2,9 +2,10 @@ class Food < ApplicationRecord
 
   belongs_to :genre
   has_many :cart_items, dependent: :destroy
+  has_many :order_details, dependent: :destroy
 
   has_one_attached :food_image
-  
+
 
   def get_food_image
     (food_image.attached?) ? food_image : 'no_image.jpg'
