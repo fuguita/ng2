@@ -7,7 +7,7 @@ class CartItem < ApplicationRecord
   end
 
   def tax_in_price
-    (food.price*1.11).floor
+    (food.price*1.10).floor
   end
 
 end
